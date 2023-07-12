@@ -3,18 +3,12 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { Modal, Button } from 'react-bootstrap';
 import ElectronicRegister from './ElectronicRegister/ElectronicRegister';
 
-const StudentList = ({ singleClass, section }) => {
-
+const StudentList = ({ singleClass, section, subject_school }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => {
         setShow(true)
     };
-
-    //chiamata per studente
-    const [student, setStudent] = useState(null)
-
-
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
@@ -40,7 +34,7 @@ const StudentList = ({ singleClass, section }) => {
                                         <ListGroup.Item > {item.name + ' ' + item.surname}</ListGroup.Item>
                                     </ListGroup>
                                     <ElectronicRegister 
-                                    dataStudents={item.students}
+                                    dataStudents={item.school_subjects}
                                     />
                                 </>
                             )
