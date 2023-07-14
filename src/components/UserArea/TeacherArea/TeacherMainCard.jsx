@@ -5,6 +5,7 @@ import StudentList from './StudentList';
 //import "../../style/MainCard.css"
 
 const TeacherMainCard = ({ idClass, section }) => {
+  console.log(idClass)
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(3);
   const [singleClass, setSingleClass] = useState(null);
@@ -15,7 +16,6 @@ const TeacherMainCard = ({ idClass, section }) => {
       const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/class/${idClass}?page=${page}&pageSize=${pageSize}`);
       const data = await response.json();
       setSingleClass(data);
-      console.log(singleClass);
     } catch (error) {
       console.log(error);
     };
@@ -24,7 +24,6 @@ const TeacherMainCard = ({ idClass, section }) => {
     getClass()
   }, [page, pageSize]);
 
-  console.log("singleClass", singleClass)
   return (
     <>
       <Card className="bg-dark text-white" key={idClass} style={{ width: '20rem', minHeight: 'fit-content' }}>

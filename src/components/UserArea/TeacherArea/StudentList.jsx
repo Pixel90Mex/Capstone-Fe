@@ -3,12 +3,13 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { Modal, Button } from 'react-bootstrap';
 import ElectronicRegister from './ElectronicRegister/ElectronicRegister';
 
-const StudentList = ({ singleClass, section, subject_school }) => {
+const StudentList = ({ singleClass, section }) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => {
         setShow(true)
     };
+    console.log(singleClass)
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
@@ -24,10 +25,11 @@ const StudentList = ({ singleClass, section, subject_school }) => {
                         <Modal.Title>Classe</Modal.Title>
                         <Button variant="secondary" onClick={handleClose}>
                             Esci
-                        </Button>
+                        </Button>{/* SingleClass.class.students[0] */}
                     </Modal.Header>
                     {
                         singleClass && singleClass.SingleClass?.class?.students?.map((item) => {
+                            console.log(item._id)
                             return (
                                 <>
                                     <ListGroup variant="flush">
@@ -35,6 +37,7 @@ const StudentList = ({ singleClass, section, subject_school }) => {
                                     </ListGroup>
                                     <ElectronicRegister 
                                     dataStudents={item.school_subjects}
+                                    Student= {item}
                                     />
                                 </>
                             )

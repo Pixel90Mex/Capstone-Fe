@@ -24,7 +24,9 @@ const UserArea = () => {
       {isStudent &&
         <>
           <UserNavigationBar />
-          <UserStudentHome />
+          <UserStudentHome 
+          Student={session}
+          />
         </>
       }
 
@@ -32,7 +34,8 @@ const UserArea = () => {
         !isStudent &&
         <>
           <UserNavigationBar />
-          <UserTeacherHome />
+          <UserTeacherHome
+          Teacher={session} />
         </>
       }
     </>
