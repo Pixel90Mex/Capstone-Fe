@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from "react-bootstrap";
-import UserMainCard from "../TeacherArea/TeacherMainCard";
-import ProfileCard from '../ProfileCard';
+import StudentProfileCard from "./StudentProfileCard";
 import useDecodedSession from '../../../hooks/useDecodedSession';
 
 const UserStudentHome = () => {
@@ -30,22 +29,9 @@ const UserStudentHome = () => {
             <Container id="MainContent">
                 <Row>
                     <Col className='mt-5 d-flex flex-wrap gap-3'>
-                        <ProfileCard />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col className='mt-5 d-flex flex-wrap gap-3' style={{ justifyContent: 'center' }} lg={12}>
-                        {
-                            student &&
-                            student.school_subjcets?.map((item) => {
-                                return (
-                                    <UserMainCard
-                                        key={item.class._id}
-                                        section={item.section}
-                                    />
-                                )
-                            })
-                        }
+                        <StudentProfileCard
+                            Student={student}
+                        />
                     </Col>
                 </Row>
             </Container>

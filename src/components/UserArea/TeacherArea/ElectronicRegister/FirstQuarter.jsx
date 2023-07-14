@@ -4,8 +4,8 @@ import { Container, Row, Col, Modal, Form, Button, InputGroup } from 'react-boot
 
 
 const FirstQuarter = ({ dataFirstQuarter, Student }) => {
-    console.log("id", Student._id)
-    console.log("materie:", dataFirstQuarter);
+    /* console.log("id", Student._id)
+    console.log("materie:", dataFirstQuarter); */
     const values = [true];
     const [fullscreen, setFullscreen] = useState(true);
     const [show, setShow] = useState(false);
@@ -75,9 +75,6 @@ const FirstQuarter = ({ dataFirstQuarter, Student }) => {
                 <Modal.Body>
                     <Container>
                         <Row>
-                            {/* <h4>media scritto:{dataFirstQuarter.dataFirstQuarter.storia.media_orale}</h4>
-                        <h4>media orale:{dataFirstQuarter.dataFirstQuarter.storia.media_scritto}</h4>
-                        <h4>media di fine quadimestre: {dataFirstQuarter.dataFirstQuarter.storia.media_fine_primo_quadrimestre}</h4> */}
                             <Col className='border 1' xs={6} md={6}>
                                 <InputGroup>
                                     <InputGroup.Text>Orale</InputGroup.Text>
@@ -92,9 +89,9 @@ const FirstQuarter = ({ dataFirstQuarter, Student }) => {
                             </Col>
                         </Row>
                     </Container>
-                    {/* <Button variant="secondary" onClick={handlePatch} />
-                    invio
-                </Button> */}
+                    <Button variant="secondary" /* onClick={handlePatch} */ >
+                        invio
+                    </Button>
                 </Modal.Body>
             </Modal>
         </>

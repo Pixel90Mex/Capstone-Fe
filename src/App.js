@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import UserArea from './pages/UserArea';
+import StudentTable from './components/UserArea/StudentArea/StudentTable';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route exact path='/' element={<Home/>}/>
         <Route path='/Login' element={<Login />}/>
         <Route path='/UserArea/:id' element={<UserArea/>}/>
+       {/*  <Route path='/StudentTable' element={<StudentTable/>}/> */}
       </Routes>
     </Router>
   );
