@@ -6,8 +6,7 @@ import useDecodedSession from '../../../hooks/useDecodedSession';
 const UserStudentHome = () => {
     const [page, setPage] = useState(1);
     const [pageSize, setPageSize] = useState(3);
-    const [student, setStudent] = useState({});
-    console.log("student", student);
+    const [student, setStudent] = useState(null);
     const decode = useDecodedSession();
 
     const getStudent = async () => {
@@ -23,7 +22,7 @@ const UserStudentHome = () => {
     useEffect(() => {
         getStudent();
     }, [page, pageSize]);
-
+    console.log("student", student);
     return (
         <>
             <Container id="MainContent">

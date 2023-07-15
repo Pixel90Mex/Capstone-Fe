@@ -1,14 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
 import { Container, Row, Col, Modal, Form, Button, InputGroup } from 'react-bootstrap';
+import useDecodedSession from "../../../../hooks/useDecodedSession";
 
-
-const FirstQuarter = ({ dataFirstQuarter, Student }) => {
-    /* console.log("id", Student._id)
-    console.log("materie:", dataFirstQuarter); */
-    const values = [true];
+const FirstQuarter = ({ Student }) => {
     const [fullscreen, setFullscreen] = useState(true);
     const [show, setShow] = useState(false);
+
+    //per prelevare materia
+    const decode = useDecodedSession();
+    console.log(decode.school_subject)
 
     //stati per form
     const [orale, setOrale] = useState(null)
@@ -21,44 +22,45 @@ const FirstQuarter = ({ dataFirstQuarter, Student }) => {
         setScritto(e.target.value);
     }
 
-    /* const handlePatch = async () => {
-        let arrayOral = Student.school_subjcets.primo_quadrimestre.storia.orale;
-        let arrayScritto = Student.school_subjcets.primo_quadrimestre.storia.scritto;
-        arrayOral.push(orale)
-        arrayScritto.push(scritto)
-        const newStudent = {...Student, 
-            school_subjcets: {
-                primo_quadrimestre: [
-                    storia: {
-                        orale: [4,5,9]
-                    
-                    }
-                ]
+    const handlePatch = async () => {
+        var contentBody = null
+        if (orale !== null) {
+
+            contentBody = {
+                quad: "primo_quadrimestre",
+                mat: decode.school_subject,
+                type: "orale",
+                value: Number(orale)
             }
+
+        } else contentBody = {
+            quad: "primo_quadrimestre",
+            mat: decode.school_subject,
+            type: "scritto",
+            value: Number(scritto)
         }
         try {
-            const data = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/student/${Student._id}`, {
+            const data = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/student/patchVote/${Student._id}`, {
                 method: 'PATCH',
-                body: //passo nel body
+                body: JSON.stringify(contentBody),
                 headers: {
-                    Content-Type: "application/json",
+                    "Content-Type": "application/json"
                 }
-            }); 
+            });
             const response = await data.json();
-            if(response.statusCode !== 200) {
-                console.log(error)
+            if (response.statusCode !== 200) {
+                console.log(response)
             } else {
                 resetFields();
             }
         } catch (error) {
-            console.log("Errore nell'invio dei dati")
+            console.log(error)
         }
-    } */
+    }
     const resetFields = () => {
         setOrale("");
         setScritto("")
     }
-    //primo_quadrimestre[0].educazione_fisica
     function handleShow() {
         setFullscreen();
         setShow(true);
@@ -89,7 +91,7 @@ const FirstQuarter = ({ dataFirstQuarter, Student }) => {
                             </Col>
                         </Row>
                     </Container>
-                    <Button variant="secondary" /* onClick={handlePatch} */ >
+                    <Button variant="secondary" onClick={handlePatch}>
                         invio
                     </Button>
                 </Modal.Body>

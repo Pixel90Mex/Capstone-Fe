@@ -1,35 +1,32 @@
 import React from 'react'
-import Table from "react-bootstrap/Table"
-import Button from "react-bootstrap/Button"
+import { Table, Button } from "react-bootstrap";
 
-const StudentTable = () => {
+const StudentTable = ({ school_subjects }) => {
+    console.log(school_subjects)
     return (
         <>
-        <Button>STORIA</Button>
-        <Button>FISICA</Button>
-            <Table responsive>
+            <Table responsive className='mt-5'>
                 <thead>
                     <tr>
-                        <th>STUDENTE</th>
+                        <th>MATERIA</th>
                         <th>SCRITTO</th>
                         <th>ORALE</th>
-                        <th>MEDIE
-                            <th>O</th>
-                            <th>S</th>
-                        </th>
+                        <th>M. ORALE</th>
+                        <th>M. SCRITTA</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        {Array.from({ length: 4 }).map((_, index) => (
+                        {Array.from({ length: 5 }).map((_, index) => (
                             <td key={index}>Table cell {index}</td>
                         ))}
                     </tr>
                 </tbody>
             </Table>
-        </>
-    )
+        </>)
 }
 
 export default StudentTable
+
+
+

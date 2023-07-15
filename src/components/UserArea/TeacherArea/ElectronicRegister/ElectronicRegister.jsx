@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import FirstQuarter from './FirstQuarter'
 import SecondQuarter from './SecondQuarter'
 
-const ElectronicRegister = ({dataStudents, Student}) => {
+const ElectronicRegister = ({ dataStudents, Student }) => {
     console.log(Student)
     return (
         <>
@@ -12,19 +12,22 @@ const ElectronicRegister = ({dataStudents, Student}) => {
                     <>
                         <Col>
                             {
-                                dataStudents && dataStudents?.primo_quadrimestre?.map((item) => {
-                                return (
-                                    <FirstQuarter
-                                    dataFirstQuarter={item}
+                                Student &&
+                                <FirstQuarter
+                                    //dataFirstQuarter={Student.school_subjects.primo_quadrimestre}
                                     Student={Student}
-                                    />
-                                )
-                            })}
+                                />
+
+                            }
                         </Col>
                         <Col>
-                            <SecondQuarter
+                            {
+                                Student &&
+                                <SecondQuarter
+                                    Student={Student}
+                                />
+                            }
 
-                            />
                         </Col>
                         <Col>
                             <Button>Prospetto Voti</Button>

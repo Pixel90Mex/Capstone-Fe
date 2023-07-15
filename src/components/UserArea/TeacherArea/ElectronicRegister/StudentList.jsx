@@ -16,7 +16,6 @@ const StudentList = ({ singleClass, section }) => {
         <>
             <Button onClick={toggleStudents}>STUDENTI</Button>
             <Table striped="columns">
-
                 {
                     singleClass && singleClass.SingleClass?.class?.students?.map((item) => {
                         return (

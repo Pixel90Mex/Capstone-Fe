@@ -15,11 +15,16 @@ const ProfileCard = ({ Teacher }) => {
                                     <Image src="https://scontent-mxp1-1.xx.fbcdn.net/v/t1.6435-9/61325188_10211278807886089_6079207078533005312_n.jpg?_nc_cat=103&cb=99be929b-3346023f&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=yomORzSQZD4AX9rqYku&_nc_ht=scontent-mxp1-1.xx&oh=00_AfC4D8QZKne7vrtfIdkiLKrTnHFBM3jMK57uLJJNMGN6fw&oe=64D4EE8A"
                                         alt="immagine" className="mt-5 mb-2 img-thumbnail " fluid style={{ width: '150px', zIndex: '1' }} roundedCircle />
                                 </div>
-                               {/*  <div className="ms-5 me-2 ps-5 " style={{ marginTop: '70px' }}>
-                                    <Card.Title tag="h5">{Teacher.teacher.name + ' ' + Teacher.teacher.surname}</Card.Title>
-                                    <Card.Text className="font-italic mb-1">{'email: ' + Teacher.teacher.email}</Card.Text>
-                                    <Card.Text className="font-italic mb-1">{Teacher.teacher.school_subject}</Card.Text>
-                                </div> */}
+                                {
+                                    Teacher && (
+                                        <div className="ms-5 me-2 ps-5 " style={{ marginTop: '70px' }}>
+                                            <Card.Title tag="h5">{Teacher.teacher.name + ' ' + Teacher.teacher.surname}</Card.Title>
+                                            <Card.Text className="font-italic mb-1">{'email: ' + Teacher.teacher.email}</Card.Text>
+                                            <Card.Text className="font-italic mb-1">{Teacher.teacher.school_subject}</Card.Text>
+                                        </div>
+                                    )
+                                }
+
                             </div>
                             <Card.Body className="text-black p-4">
 
