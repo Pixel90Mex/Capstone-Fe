@@ -44,7 +44,8 @@ const FirstQuarter = ({ Student }) => {
                 method: 'PATCH',
                 body: JSON.stringify(contentBody),
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": localStorage.getItem("session")
                 }
             });
             const response = await data.json();
@@ -67,35 +68,37 @@ const FirstQuarter = ({ Student }) => {
     }
     return (
         <>
-            <Button className="me-2 mb-2" onClick={() => handleShow()}>
-                Primo Quadrimestre
-            </Button>
-            <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
-                <Modal.Header closeButton>
-                    <Modal.Title>STUDENTE</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <Container>
-                        <Row>
-                            <Col className='border 1' xs={6} md={6}>
-                                <InputGroup>
-                                    <InputGroup.Text>Orale</InputGroup.Text>
-                                    <Form.Control as="textarea" aria-label="With textarea" value={orale} onChange={handleOrale} />
-                                </InputGroup>
-                            </Col>
-                            <Col className='border 1' xs={6} md={6}>
-                                <InputGroup>
-                                    <InputGroup.Text>Scritto</InputGroup.Text>
-                                    <Form.Control as="textarea" aria-label="With textarea" value={scritto} onChange={handleScritto} />
-                                </InputGroup>
-                            </Col>
-                        </Row>
-                    </Container>
-                    <Button variant="secondary" onClick={handlePatch}>
-                        invio
-                    </Button>
-                </Modal.Body>
-            </Modal>
+            <Container fluid>
+                <Button className="me-2 mb-2" onClick={() => handleShow()}>
+                    Primo Quadrimestre
+                </Button>
+                <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>{decode.school_subject}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Container>
+                            <Row>
+                                <Col className='border 1' xs={6} md={6}>
+                                    <InputGroup>
+                                        <InputGroup.Text>Orale</InputGroup.Text>
+                                        <Form.Control as="textarea" aria-label="With textarea" value={orale} onChange={handleOrale} />
+                                    </InputGroup>
+                                </Col>
+                                <Col className='border 1' xs={6} md={6}>
+                                    <InputGroup>
+                                        <InputGroup.Text>Scritto</InputGroup.Text>
+                                        <Form.Control as="textarea" aria-label="With textarea" value={scritto} onChange={handleScritto} />
+                                    </InputGroup>
+                                </Col>
+                            </Row>
+                        </Container>
+                        <Button variant="secondary" onClick={handlePatch}>
+                            invio
+                        </Button>
+                    </Modal.Body>
+                </Modal>
+            </Container>
         </>
     )
 }

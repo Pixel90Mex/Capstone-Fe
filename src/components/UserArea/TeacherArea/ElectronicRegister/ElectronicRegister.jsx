@@ -1,38 +1,56 @@
 import React from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import { Container, Row, Col, Button, ListGroup } from 'react-bootstrap'
 import FirstQuarter from './FirstQuarter'
 import SecondQuarter from './SecondQuarter'
+import VotesTrendFirstQuarter from './VotesTrendFirstQuarter'
+import VotesTrendSecondQuarter from './VotesTrendSecondQuarter'
+import useDecodedSession from '../../../../hooks/useDecodedSession'
 
-const ElectronicRegister = ({ dataStudents, Student }) => {
-    console.log(Student)
+const ElectronicRegister = ({ Student, dataStudents }) => {
+    const decodeSubject = useDecodedSession()
+    //console.log(dataStudents)
     return (
         <>
             <Container>
                 <Row>
                     <>
                         <Col>
-                            {
-                                Student &&
-                                <FirstQuarter
-                                    //dataFirstQuarter={Student.school_subjects.primo_quadrimestre}
-                                    Student={Student}
-                                />
 
-                            }
-                        </Col>
-                        <Col>
-                            {
-                                Student &&
-                                <SecondQuarter
-                                    Student={Student}
-                                />
-                            }
+                            <ListGroup.Item>
+                                {
+                                    Student &&
+                                    <FirstQuarter
+                                        Student={Student}
+                                    />
 
-                        </Col>
-                        <Col>
-                            <Button>Prospetto Voti</Button>
+                                }
+                            </ListGroup.Item>
+                            <ListGroup.Item>
+                                {
+                                    Student &&
+                                    <SecondQuarter
+                                        Student={Student}
+                                    />
+                                }
+                            </ListGroup.Item>
                         </Col>
                     </>
+                </Row>
+            </Container>
+            <Container>
+                <Row>
+                    <Col>
+                        <VotesTrendFirstQuarter
+                            Student={Student}
+                            decodeSubject={decodeSubject}
+                        />
+                    </Col>
+                    <Col>
+                        <VotesTrendSecondQuarter
+                            Student={Student}
+                            decodeSubject={decodeSubject}
+                        />
+                    </Col>
                 </Row>
             </Container>
         </>

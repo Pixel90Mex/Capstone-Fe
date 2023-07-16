@@ -68,6 +68,7 @@ const SecondQuarter = ({ Student }) => {
     }
     return (
         <>
+        <Container fluid>
             <Button className="me-2 mb-2" onClick={() => handleShow()}>
                 Secondo quadrimestre
             </Button>
@@ -97,6 +98,7 @@ const SecondQuarter = ({ Student }) => {
                     </Button>
                 </Modal.Body>
             </Modal>
+            </Container>
         </>
     )
 }

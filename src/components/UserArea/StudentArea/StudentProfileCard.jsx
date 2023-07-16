@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Container, Row, Col, Image } from 'react-bootstrap'
-import StudentVotesCard from './StudentVotesCard'
+import StudentFirstQuarter from "./VotesFirstQuarter/FirstQuarter/StudentFirstQuarter";
+import StudentSecondQuarter from "./VotesSecondQuarter/SecondQuarter/StudentSecondQuarter";
 
 const StudentProfileCard = ({ Student }) => {
     //console.log(Student)
@@ -30,12 +31,20 @@ const StudentProfileCard = ({ Student }) => {
                                     <Col>
                                     {
                                         Student && (
-                                            <StudentVotesCard
+                                            <StudentFirstQuarter
                                             school_subjects={Student.student.school_subjects}
-                                        />
+                                            />  
                                         )
                                     }
-                                       
+                                    </Col>
+                                    <Col>
+                                    {
+                                        Student && (
+                                            <StudentSecondQuarter
+                                            school_subjects={Student.student.school_subjects}
+                                            />
+                                        )
+                                    }
                                     </Col>
                                 </Row>
                             </Card.Body>

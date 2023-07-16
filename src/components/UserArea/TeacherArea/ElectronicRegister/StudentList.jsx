@@ -1,21 +1,16 @@
 import React, { useState } from 'react'
-import { Table, Button } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import ElectronicRegister from './ElectronicRegister';
-import StudentTable from '../../StudentArea/StudentTable';
-const StudentList = ({ singleClass, section }) => {
-    //console.log(singleClass)
-    const [renderTable, setRenderTable] = useState(false);
+const StudentList = ({ singleClass, section, Teacher }) => {
+    console.log(Teacher)
     const [renderStudents, setRenderStudents] = useState(false);
     const toggleStudents = () => {
         setRenderStudents(!renderStudents)
     }
-    const toggleTable = () => {
-        setRenderTable(!renderTable)
-    }
+
     return (
         <>
-            <Button onClick={toggleStudents}>STUDENTI</Button>
-            <Table striped="columns">
+            <Button onClick={toggleStudents}>{section}</Button>
                 {
                     singleClass && singleClass.SingleClass?.class?.students?.map((item) => {
                         return (
@@ -23,28 +18,23 @@ const StudentList = ({ singleClass, section }) => {
                                 {
                                     renderStudents &&
                                     <>
-                                        <thead>
-                                            <tr>
-                                                <th>{item.name + ' ' + item.surname}</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <ElectronicRegister
-                                                dataStudents={item.school_subjects}
-                                                Student={item}
-                                            />
-                                        </tbody>
-                                        <Button onClick={toggleTable}>TABELLA VALUTAZIONI</Button>
-                                        {
-                                            renderTable && <StudentTable />
-                                        }
+                                        <Card>
+                                            <Card.Header>{item.name + ' ' + item.surname}</Card.Header>
+                                            <Card.Body>
+                                                <ElectronicRegister
+                                                    dataStudents={item.school_subjects}
+                                                    Student={item}
+                                                    Teacher={Teacher}
+                                                />
+                                            </Card.Body>
+                                        </Card>
+                                        
                                     </>
                                 }
                             </>
                         )
                     })
-                }
-            </Table>
+                }   
         </>
     )
 }

@@ -40,6 +40,7 @@ const ProfileCard = ({ Teacher }) => {
                                                     <TeacherMainCard
                                                         idClass={item._id}
                                                         section={item.class.section}
+                                                        Teacher={Teacher}
                                                     />
                                                 )
                                             })
