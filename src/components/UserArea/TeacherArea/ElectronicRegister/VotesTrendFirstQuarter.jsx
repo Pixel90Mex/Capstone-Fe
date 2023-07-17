@@ -22,7 +22,7 @@ const VotesTrendFirstQuarter = ({ Student, decodeSubject }) => {
     console.log(singleSubject)
     return (
         <>
-            <Button>Primo Quadrimestre</Button>
+            
             <Table responsive className='mt-5'>
                 <thead>
                     <tr>
@@ -36,11 +36,14 @@ const VotesTrendFirstQuarter = ({ Student, decodeSubject }) => {
                             {singleSubject && singleSubject.subject.orale.map((item, index) => (
                                 <ul key={index}>{item}</ul>
                             ))}
+                            <ul>Media: {singleSubject && singleSubject.subject.media_orale}</ul>
                         </td>
+                        
                         <td>
                         {singleSubject && singleSubject.subject.scritto.map((item, index) => (
                                 <ul key={index}>{item}</ul>
                             ))}
+                            <ul>Media: {singleSubject && singleSubject.subject.media_scritto}</ul>
                         </td>
                     </tr>
                 </tbody>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
     return (
-        <Nav fill variant="tabs" defaultActiveKey="/home">
+        <Nav fill variant="tabs" defaultActiveKey="/home" fixed="top">
             <Nav.Item>
                 <Nav.Link href="/#">Profilo</Nav.Link>
             </Nav.Item>

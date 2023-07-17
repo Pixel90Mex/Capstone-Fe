@@ -43,10 +43,7 @@ const SecondQuarter = ({ Student }) => {
         try {
             const data = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/student/patchVote/${Student._id}`, {
                 method: 'PATCH',
-                body: JSON.stringify(contentBody),
-                headers: {
-                    "Content-Type": "application/json"
-                }
+                body: JSON.stringify(contentBody)
             });
             const response = await data.json();
             if (response.statusCode !== 200) {

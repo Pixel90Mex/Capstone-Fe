@@ -7,6 +7,7 @@ import { LoginRequest } from "../reducers/loginSlice";
 import { Toast } from "../utilities/notification";
 import { Toaster } from "react-hot-toast";
 import jwtDecode from "jwt-decode";
+import "../style/Login.css";
 
 const Login = () => {
 
@@ -61,10 +62,6 @@ const Login = () => {
                         placeholder="Inserisci password..."
                         className="my-2"
                     />
-                    <div className="links">
-                        <a href="#">Forgot Password</a>
-                        <a href="#">Signup</a>
-                    </div>
                     <Button type="submit">Login</Button>
                 </Form>
             </div>

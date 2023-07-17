@@ -1,6 +1,6 @@
 export const mainItems = [
     {
-        src: 'https://scorcidimondo.it/wp-content/uploads/2017/07/DSC_0225-min.jpg',
+        src: 'https://localhost:3000/src/Images/homeImages/Andrea_img/img1.jpg',
         alt: 'First Card',
         title: 'First title',
         id: 1

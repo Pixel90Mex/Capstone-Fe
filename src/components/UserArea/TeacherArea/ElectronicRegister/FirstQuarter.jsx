@@ -9,7 +9,7 @@ const FirstQuarter = ({ Student }) => {
 
     //per prelevare materia
     const decode = useDecodedSession();
-    console.log(decode.school_subject)
+    console.log(decode.school_subject);
 
     //stati per form
     const [orale, setOrale] = useState(null)
@@ -42,11 +42,7 @@ const FirstQuarter = ({ Student }) => {
         try {
             const data = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/student/patchVote/${Student._id}`, {
                 method: 'PATCH',
-                body: JSON.stringify(contentBody),
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": localStorage.getItem("session")
-                }
+                body: JSON.stringify(contentBody)
             });
             const response = await data.json();
             if (response.statusCode !== 200) {
