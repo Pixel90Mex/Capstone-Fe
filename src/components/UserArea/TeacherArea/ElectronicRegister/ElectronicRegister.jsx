@@ -9,21 +9,7 @@ import useDecodedSession from '../../../../hooks/useDecodedSession'
 
 const ElectronicRegister = ({ Student }) => {
     const decodeSubject = useDecodedSession()
-    //console.log(dataStudents)
-    const [renderTableOne, setRenderTableOne] = useState(false);
-    const [renderTableTwo, setRenderTableTwo] = useState(false);
-    const [handleOne, setHandleOne] = useState(false);
-    const [handleTwo, setHandleTwo] = useState(false);
-
-    const toggleClickOne = () => {
-        setHandleOne(true)
-        setRenderTableOne(!renderTableOne)
-    }
-
-    const toggleClickTwo = () => {
-        setHandleTwo(true)
-        setRenderTableTwo(!renderTableTwo)
-    }
+   
     return (
         <>
             <Container>
@@ -37,20 +23,15 @@ const ElectronicRegister = ({ Student }) => {
                                     <FirstQuarter
                                         Student={Student}
                                     />
-
                                 }
                             </div>
                             <div className='mt-3'>
-                                <Button className='w-50 font-italic' variant="outline-dark" onClick={toggleClickOne}>Registro valutazioni</Button>
-                                {
-                                    renderTableOne && handleOne &&
                                     <>
                                         <VotesTrendFirstQuarter
                                             Student={Student}
                                             decodeSubject={decodeSubject}
                                         />
                                     </>
-                                }
                             </div>
                         </div>
                     </Col>
@@ -66,16 +47,14 @@ const ElectronicRegister = ({ Student }) => {
                                 }
                             </div>
                             <div className='mt-3'>
-                                <Button className='w-50' variant="outline-dark" onClick={toggleClickTwo}>Registro valutazioni</Button>
-                                {
-                                    renderTableTwo && handleTwo &&
+                                
                                     <>
                                         <VotesTrendSecondQuarter
                                             Student={Student}
                                             decodeSubject={decodeSubject}
                                         />
                                     </>
-                                }
+                                
                             </div>
                         </div>
                     </Col>

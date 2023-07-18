@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Row, Col, Image } from 'react-bootstrap'
+import { Card, Image } from 'react-bootstrap'
 import TeacherMainCard from './TeacherMainCard'
 
 const ProfileCard = ({ Teacher }) => {
@@ -21,7 +21,6 @@ const ProfileCard = ({ Teacher }) => {
                             </div>
                         )
                     }
-
                 </div>
                 <Card.Body className="text-black p-4">
                     <Card.Text className="font-italic mb-3" style={{fontSize:'21px',  color:'#3c3c3c'}}>CLASSI ASSOCIATE</Card.Text>

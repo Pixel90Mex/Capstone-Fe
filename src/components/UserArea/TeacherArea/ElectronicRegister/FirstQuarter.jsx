@@ -67,15 +67,14 @@ const FirstQuarter = ({ Student }) => {
     }
     return (
         <>
-            <Button  variant="outline-dark" className="me-2 mb-2 w-50 font-italic" onClick={() => handleShow()}>
+            <Button variant="outline-dark" className="me-2 mb-2 w-50" onClick={() => handleShow()}>
                 Inserisci valutazione
             </Button>
             <Modal centered show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
-                <Modal.Header style={{ backgroundColor: '#4bb3bc' }} closeButton>
-                    <Modal.Title className='font-italic' >{Student.name + ' ' + Student.surname}</Modal.Title>
+                <Modal.Header className='' style={{ backgroundColor: '#cdcdcd', color: '#3c3c3c', border: 'none' }} closeButton>
+                    <Modal.Title>{Student.name + ' ' + Student.surname + ' - ' + decode.school_subject}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body centered style={{ backgroundColor: '#4bb3bc' }}>
-                    <h4>{decode.school_subject} </h4>
+                <Modal.Body style={{ backgroundColor: '#f8f9fa'}}>
                     <Container>
                         <Row>
                             <Col xs={6} md={6}>

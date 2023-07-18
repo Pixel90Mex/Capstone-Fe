@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { Button, Nav, Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col } from 'react-bootstrap';
 import FirstQuarterSubjects from '../FirstQuarterSubjects';
+import "../../../../../style/buttonList.css"
 
-const StudentFirstQuarter= ({ school_subjects }) => {
+const StudentFirstQuarter = ({ school_subjects }) => {
     //console.log(school_subjects)
     const [renderTable, setRenderTable] = useState(false);
     const [handleOne, setHandleOne] = useState(false);
@@ -13,25 +14,17 @@ const StudentFirstQuarter= ({ school_subjects }) => {
     }
     return (
         <>
-            <Container className='mt-5'>
-                <Row>
-                    <Col>
-                        <div className='d-flex justify-content-between'>
+            <div className='mb-3'>
+                <Button id='butStudent' className='mt-0' onClick={toggleClickOne}>1°Q</Button>
+                {renderTable && handleOne &&
+                    <>
+                        <FirstQuarterSubjects
+                            school_subjects={school_subjects.primo_quadrimestre}
+                        />
+                    </>
+                }
+            </div>
 
-                            <div>
-                                <Button variant="outline-dark" className='p-0' onClick={toggleClickOne}>Primo Quadrimestre</Button>
-                                {renderTable && handleOne &&
-                                    <>
-                                        <FirstQuarterSubjects
-                                            school_subjects={school_subjects.primo_quadrimestre}
-                                        />
-                                    </>
-                                }
-                            </div>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
         </>
     )
 }

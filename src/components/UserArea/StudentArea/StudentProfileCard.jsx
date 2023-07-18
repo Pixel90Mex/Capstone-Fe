@@ -1,5 +1,6 @@
 import React from 'react'
-import { Card, Container, Row, Col, Image } from 'react-bootstrap'
+import { useState } from 'react';
+import { Card, Button, Row, Col, Image } from 'react-bootstrap'
 import StudentFirstQuarter from "./VotesFirstQuarter/FirstQuarter/StudentFirstQuarter";
 import StudentSecondQuarter from "./VotesSecondQuarter/SecondQuarter/StudentSecondQuarter";
 
@@ -24,7 +25,7 @@ const StudentProfileCard = ({ Student }) => {
                     }
                 </div>
                 <Card.Body className="text-black p-4">
-                <Card.Text className="font-italic mb-3" style={{fontSize:'21px',  color:'#3c3c3c'}}>REGISTRO</Card.Text>
+                <Card.Title className="font-italic mb-4 mt-3" style={{fontSize:'21px',  color:'#3c3c3c'}}>REGISTRO</Card.Title>
                     <Row>
                         <Col>
                             {

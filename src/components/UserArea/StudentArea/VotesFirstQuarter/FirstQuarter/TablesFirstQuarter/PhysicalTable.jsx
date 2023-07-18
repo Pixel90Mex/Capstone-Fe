@@ -4,7 +4,7 @@ import { Table } from "react-bootstrap"
 const PhysicalTable = ({ fisica }) => {
     return (
         <>
-            <Table responsive className='mt-5'>
+            <Table striped="columns" bordered hover responsive variant="dark" className='mt-5 ' size="sm">
                 <thead>
                     <tr>
                         <th>ORALE</th>

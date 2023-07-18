@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import { Container, Row, Col, Button} from "react-bootstrap";
+import { ListGroup, Button } from "react-bootstrap";
 import HistoryTable from "./FirstQuarter/TablesFirstQuarter/HistoryTable"
 import PhilosophyTable from './FirstQuarter/TablesFirstQuarter/PhilosophyTable.jsx';
 import ItalianTable from './FirstQuarter/TablesFirstQuarter/ItalianTable';
@@ -57,85 +57,80 @@ const FirstQuarterSubjects = (school_subjects) => {
         setRenderTableEdFisica(!renderTableEdFisica)
     }
     return (
-        <Container className='mt-5'>
-            <Row>
-                <Col>
-                    <div className='d-flex justify-content-between'>
-
-                        <div>
-                            <Button variant="outline-dark" className='p-0' onClick={toggleClickStoria}>STORIA</Button>
-                            {renderTableStoria && handleStoria &&
-                                <>
-                                    <HistoryTable
-                                        storia={school_subjects.school_subjects.storia}
-                                    />
-                                </>
-                            }
-                        </div>
-                        <div>
-                            <Button variant="outline-dark" className='p-0' onClick={toggleClickFilosifia}>FILOSOFIA</Button>
-                            {renderTableFilosofia && handleFilosofia &&
-                                <>
-                                    <PhilosophyTable
-                                        filosofia={school_subjects.school_subjects.filosofia}
-                                    />
-                                </>
-                            }
-                        </div>
-                         <div>
-                            <Button variant="outline-dark" className='p-0' onClick={toggleClickItaliano}>ITALIANO</Button>
-                            {renderTableItaliano && handleItaliano &&
-                                <>
-                                    <ItalianTable
-                                        italiano={school_subjects.school_subjects.italiano}
-                                    />
-                                </>
-                            }
-                        </div>
-                       <div>
-                            <Button variant="outline-dark" className='p-0' onClick={toggleClickMath}>MATEMATICA</Button>
-                            {renderTableMath && handleMath &&
-                                <>
-                                    <MathTable
-                                        matematica={school_subjects.school_subjects.matematica}
-                                    />
-                                </>
-                            }
-                        </div>
-                        <div>
-                            <Button variant="outline-dark" className='p-0' onClick={toggleClickScienze}>SCIENZE</Button>
-                            {renderTableScienze && handleScienze &&
-                                <>
-                                    <ScienceTable
-                                        scienze={school_subjects.school_subjects.scienze}
-                                    />
-                                </>
-                            }
-                        </div>
-                        <div>
-                            <Button variant="outline-dark" className='p-0' onClick={toggleClickFisica}>FISICA</Button>
-                            {renderTableFisica && handleFisica &&
-                                <>
-                                    <PhysicalTable
-                                        fisica={school_subjects.school_subjects.fisica}
-                                    />
-                                </>
-                            }
-                        </div>
-                        <div>
-                            <Button variant="outline-dark" className='p-0' onClick={toggleClickEdFisica}>EDUCAZIONE FISICA</Button>
-                            {renderTableEdFisica && handleEdFisica &&
-                                <>
-                                    <PhysEd
-                                        edFisica={school_subjects.school_subjects.educazione_fisica}
-                                    />
-                                </>
-                            }
-                        </div> 
-                    </div>
-                </Col>
-            </Row>
-        </Container>
+        <>
+            <ListGroup className="mt-4">
+                <ListGroup.Item className='border-0' style={{backgroundColor: '#ebebeb'}}>
+                    <Button style={{fontWeight:'600', width:'133px'}} variant="outline-dark" onClick={toggleClickStoria}>STORIA</Button>
+                    {renderTableStoria && handleStoria &&
+                        <>
+                            <HistoryTable
+                                storia={school_subjects.school_subjects.storia}
+                            />
+                        </>
+                    }
+                </ListGroup.Item>
+                <ListGroup.Item className='border-0' style={{backgroundColor: '#ebebeb'}}>
+                    <Button style={{fontWeight:'600', width:'133px'}} variant="outline-dark" onClick={toggleClickFilosifia}>FILOSOFIA</Button>
+                    {renderTableFilosofia && handleFilosofia &&
+                        <>
+                            <PhilosophyTable
+                                filosofia={school_subjects.school_subjects.filosofia}
+                            />
+                        </>
+                    }
+                </ListGroup.Item>
+                <ListGroup.Item className='border-0' style={{backgroundColor: '#ebebeb'}}>
+                    <Button style={{fontWeight:'600', width:'133px'}} variant="outline-dark" onClick={toggleClickItaliano}>ITALIANO</Button>
+                    {renderTableItaliano && handleItaliano &&
+                        <>
+                            <ItalianTable
+                                italiano={school_subjects.school_subjects.italiano}
+                            />
+                        </>
+                    }
+                </ListGroup.Item>
+                <ListGroup.Item className='border-0' style={{backgroundColor: '#ebebeb'}}>
+                    <Button style={{fontWeight:'600', width:'133px'}} variant="outline-dark" onClick={toggleClickMath}>MATEMATICA</Button>
+                    {renderTableMath && handleMath &&
+                        <>
+                            <MathTable
+                                matematica={school_subjects.school_subjects.matematica}
+                            />
+                        </>
+                    }
+                </ListGroup.Item>
+                <ListGroup.Item className='border-0'style={{backgroundColor: '#ebebeb'}}>
+                    <Button style={{fontWeight:'600', width:'133px'}} variant="outline-dark" onClick={toggleClickScienze}>SCIENZE</Button>
+                    {renderTableScienze && handleScienze &&
+                        <>
+                            <ScienceTable
+                                scienze={school_subjects.school_subjects.scienze}
+                            />
+                        </>
+                    }
+                </ListGroup.Item>
+                <ListGroup.Item className='border-0'style={{backgroundColor: '#ebebeb'}}>
+                    <Button style={{fontWeight:'600', width:'133px'}} variant="outline-dark" onClick={toggleClickFisica}>FISICA</Button>
+                    {renderTableFisica && handleFisica &&
+                        <>
+                            <PhysicalTable
+                                fisica={school_subjects.school_subjects.fisica}
+                            />
+                        </>
+                    }
+                </ListGroup.Item>
+                <ListGroup.Item className='border-0' style={{backgroundColor: '#ebebeb'}}>
+                    <Button style={{fontWeight:'600', width:'133px'}} variant="outline-dark" onClick={toggleClickEdFisica}>ED. FISICA</Button>
+                    {renderTableEdFisica && handleEdFisica &&
+                        <>
+                            <PhysEd
+                                edFisica={school_subjects.school_subjects.educazione_fisica}
+                            />
+                        </>
+                    }
+                </ListGroup.Item>
+            </ListGroup>
+        </>
     )
 }
 

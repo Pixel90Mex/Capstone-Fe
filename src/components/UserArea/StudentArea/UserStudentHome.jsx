@@ -4,14 +4,12 @@ import StudentProfileCard from "./StudentProfileCard";
 import useDecodedSession from '../../../hooks/useDecodedSession';
 
 const UserStudentHome = () => {
-    const [page, setPage] = useState(1);
-    const [pageSize, setPageSize] = useState(3);
     const [student, setStudent] = useState(null);
     const decode = useDecodedSession();
 
     const getStudent = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/student/${decode.id}?page=${page}&pageSize=${pageSize}`);
+            const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/student/${decode.id}`);
             const data = await response.json();
             setStudent(data);
 
@@ -21,13 +19,13 @@ const UserStudentHome = () => {
     };
     useEffect(() => {
         getStudent();
-    }, [page, pageSize]);
+    });
     console.log("student", student);
     return (
         <>
             <Container fluid>
                 <Row>
-                    <Col className='mt-5 d-flex flex-wrap gap-3'>
+                    <Col className='p-0'>
                         <StudentProfileCard
                             Student={student}
                         />
