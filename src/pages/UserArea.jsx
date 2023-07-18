@@ -21,20 +21,20 @@ const UserArea = () => {
 
   return (
     <>
-      {isStudent &&
-        <>
-          <UserNavigationBar />
-          <UserStudentHome />
-        </>
-      }
+        {isStudent &&
+          <>
+            <UserNavigationBar />
+            <UserStudentHome />
+          </>
+        }
 
-      {
-        !isStudent &&
-        <>
-          <UserNavigationBar />
-          <UserTeacherHome />
-        </>
-      }
+        {
+          !isStudent &&
+          <>
+            <UserNavigationBar />
+            <UserTeacherHome />
+          </>
+        }
     </>
   );
 }

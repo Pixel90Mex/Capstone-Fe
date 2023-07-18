@@ -25,7 +25,7 @@ const UserStudentHome = () => {
     console.log("student", student);
     return (
         <>
-            <Container id="MainContent">
+            <Container fluid>
                 <Row>
                     <Col className='mt-5 d-flex flex-wrap gap-3'>
                         <StudentProfileCard

@@ -5,22 +5,23 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Image } from 'react-bootstrap';
 import logo from "../../Images/logo.png"
+import "../../style/navBarHome.css";
 
 const NavigationBar = () => {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary" fixed="top">
+        <Navbar id='NavHome' expand="lg" fixed="top">
             <Container fluid>
                 <Navbar.Brand className='ps-5' href='/'>
-                    <Image src={logo} alt='logo' style={{width:'90px'}} roundedCircle fluid /></Navbar.Brand>
+                    <Image id='logo' src={logo} alt='logo' style={{width:'140px'}} roundedCircle fluid /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
                         className="me-auto my-2 my-lg-0"
-                        style={{ maxHeight: '100px', maxWidth: '' }}
+                        style={{ maxHeight: '100px'}}
                         navbarScroll
                     >
-                        <NavDropdown className='ps-5' title="Istituto" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href='/Login'>Chi siamo</NavDropdown.Item>
+                        <NavDropdown className='ps-5 fs-3' title="Istituto" >
+                            <NavDropdown.Item className='drop' href='/Login'>Chi siamo</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Organigramma</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">PTOF e regolamenti</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Piano degli studi</NavDropdown.Item>
@@ -32,7 +33,7 @@ const NavigationBar = () => {
                             <NavDropdown.Item href="#action4">BIBLIOTECA</NavDropdown.Item>
                             <NavDropdown.Divider />
                         </NavDropdown>
-                        <NavDropdown className='ps-5' title="Segreteria" id="navbarScrollingDropdown">
+                        <NavDropdown className='ps-5 fs-3' title="Segreteria" >
                             <NavDropdown.Item href='/Login'>URP</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Modulistica</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Info e pagamenti</NavDropdown.Item>
@@ -41,7 +42,7 @@ const NavigationBar = () => {
                             <NavDropdown.Item href="#action4">Amministrazione trasparente</NavDropdown.Item>
                             <NavDropdown.Divider />
                         </NavDropdown>
-                        <NavDropdown className='ps-5' title="Didattica" id="navbarScrollingDropdown">
+                        <NavDropdown className='ps-5 fs-3' title="Didattica" >
                             <NavDropdown.Item href='/Login'>Calendario lezioni</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Orario lezioni</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Libri di testo</NavDropdown.Item>
@@ -51,7 +52,7 @@ const NavigationBar = () => {
                             <NavDropdown.Item href="#action4">Laboratori di classe</NavDropdown.Item>
                             <NavDropdown.Divider />
                         </NavDropdown>
-                        <NavDropdown className='ps-5' title="Docenti" id="navbarScrollingDropdown">
+                        <NavDropdown className='ps-5 fs-3' title="Docenti" id="navbarScrollingDropdown4">
                             <NavDropdown.Item href='/Login'>Assegnazione classi</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Incarichi ed elenchi coordinatori</NavDropdown.Item>
                             <NavDropdown.Item href="#action4">Orario lezioni</NavDropdown.Item>
@@ -60,9 +61,8 @@ const NavigationBar = () => {
                             <NavDropdown.Item href="#action4">Registro supplenze docenti</NavDropdown.Item>
                             <NavDropdown.Divider />
                         </NavDropdown>
-                        <Nav.Link className='ps-5' href="/Login">Login</Nav.Link>
+                        <Nav.Link className='ps-5 me-5 fs-3' href="/Login">Login</Nav.Link>
                     </Nav>
-
                 </Navbar.Collapse>
             </Container>
         </Navbar>

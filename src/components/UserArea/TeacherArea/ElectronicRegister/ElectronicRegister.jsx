@@ -1,37 +1,37 @@
 import React from 'react'
 import { useState } from 'react'
-import { Container, Row, Col, Button, ListGroup } from 'react-bootstrap'
+import { Container, Row, Col, Button } from 'react-bootstrap'
 import FirstQuarter from './FirstQuarter'
 import SecondQuarter from './SecondQuarter'
 import VotesTrendFirstQuarter from './VotesTrendFirstQuarter'
 import VotesTrendSecondQuarter from './VotesTrendSecondQuarter'
 import useDecodedSession from '../../../../hooks/useDecodedSession'
 
-const ElectronicRegister = ({ Student, dataStudents }) => {
+const ElectronicRegister = ({ Student }) => {
     const decodeSubject = useDecodedSession()
     //console.log(dataStudents)
-    const [renderTable, setRenderTable] = useState(false);
-    const [handleOne, setHandleOne] = useState(false);
+    const [renderTableOne, setRenderTableOne] = useState(false);
     const [renderTableTwo, setRenderTableTwo] = useState(false);
+    const [handleOne, setHandleOne] = useState(false);
     const [handleTwo, setHandleTwo] = useState(false);
 
     const toggleClickOne = () => {
         setHandleOne(true)
-        setRenderTable(!renderTable)
+        setRenderTableOne(!renderTableOne)
     }
 
     const toggleClickTwo = () => {
         setHandleTwo(true)
-        setRenderTableTwo(!renderTable)
+        setRenderTableTwo(!renderTableTwo)
     }
     return (
         <>
             <Container>
                 <Row>
-                    <>
-                        <Col>
-
-                            <ListGroup.Item>
+                    <Col >
+                        <div className='mb-3'>
+                            <h3 className='pb-2 font-italic'>PRIMO QUADRIMESTRE</h3>
+                            <div className='d-flex align-items-center'>
                                 {
                                     Student &&
                                     <FirstQuarter
@@ -39,46 +39,45 @@ const ElectronicRegister = ({ Student, dataStudents }) => {
                                     />
 
                                 }
-                            </ListGroup.Item>
-                            <ListGroup.Item>
+                            </div>
+                            <div className='mt-3'>
+                                <Button className='w-50 font-italic' variant="outline-dark" onClick={toggleClickOne}>Registro valutazioni</Button>
+                                {
+                                    renderTableOne && handleOne &&
+                                    <>
+                                        <VotesTrendFirstQuarter
+                                            Student={Student}
+                                            decodeSubject={decodeSubject}
+                                        />
+                                    </>
+                                }
+                            </div>
+                        </div>
+                    </Col>
+                    <Col >
+                        <div className='mb-3'>
+                            <h3 className='pb-2'>SECONDO QUADRIMESTRE</h3>
+                            <div>
                                 {
                                     Student &&
                                     <SecondQuarter
                                         Student={Student}
                                     />
                                 }
-                            </ListGroup.Item>
-                        </Col>
-                    </>
-                </Row>
-            </Container>
-            <Container>
-                <Row>
-                    <Col>
-                        <Button variant="outline-dark" className='p-0' onClick={toggleClickOne}>Primo Quadrimestre</Button>
-                        {
-                            renderTable && handleOne &&
-                            <>
-                                <VotesTrendFirstQuarter
-                                    Student={Student}
-                                    decodeSubject={decodeSubject}
-                                />
-                            </>
-                        }
-
-                    </Col>
-                    <Col>
-                        <Button variant="outline-dark" className='p-0' onClick={toggleClickTwo}>Secondo Quadrimestre</Button>
-                        {
-                            renderTableTwo && handleTwo &&
-                            <>
-                                <VotesTrendSecondQuarter
-                                    Student={Student}
-                                    decodeSubject={decodeSubject}
-                                />
-                            </>
-                        }
-
+                            </div>
+                            <div className='mt-3'>
+                                <Button className='w-50' variant="outline-dark" onClick={toggleClickTwo}>Registro valutazioni</Button>
+                                {
+                                    renderTableTwo && handleTwo &&
+                                    <>
+                                        <VotesTrendSecondQuarter
+                                            Student={Student}
+                                            decodeSubject={decodeSubject}
+                                        />
+                                    </>
+                                }
+                            </div>
+                        </div>
                     </Col>
                 </Row>
             </Container>

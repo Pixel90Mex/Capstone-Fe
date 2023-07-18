@@ -7,21 +7,14 @@
     font-family: "Poppins", sans-serif;
 }
 
-body {
+.box {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /*background-color: #08457E !important;*/
-}
-
-.box {
+    background-color: #ebebeb !important;
     position: relative;
-    width: 380px;
     height: 560px;
-    
-    border-radius: 8px;
-    overflow: hidden;
 }
 
 h2 {
@@ -34,19 +27,16 @@ h2 {
 #root>div>form>input.form.my-2.form-control,
 #root>div>form>input:nth-child(3) {
     background: transparent;
-    /*border: none;*/
-
     outline: none;
-    color: white;
     font-size: 1em;
     letter-spacing: 0.05em;
 }
 
 #root>div>form>button {
-    border: 1px solid #45f3ff;
+    border: 1px solid #b22222;
     outline: none;
     background: transparent;
-    color: #fff;
+    color: #23242a;
     padding: 11px 25px;
     width: 100px;
     margin-top: 40px;
@@ -57,7 +47,7 @@ h2 {
 }
 
 #root>div>form>button:hover {
-    background: #45f3ff;
+    background: #b22222;
     color: #23242a;
 }
 

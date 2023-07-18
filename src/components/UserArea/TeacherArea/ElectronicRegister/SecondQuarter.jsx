@@ -65,37 +65,36 @@ const SecondQuarter = ({ Student }) => {
     }
     return (
         <>
-        <Container fluid>
-            <Button className="me-2 mb-2" onClick={() => handleShow()}>
-                Secondo quadrimestre
+            <Button variant="outline-dark" className="me-2 mb-2 w-50 font-italic" onClick={() => handleShow()}>
+                inserisci valutazione
             </Button>
-            <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
-                <Modal.Header closeButton>
-                    <Modal.Title>STUDENTE</Modal.Title>
+            <Modal centered show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
+                <Modal.Header style={{ backgroundColor: '#4bb3bc' }} closeButton>
+                    <Modal.Title className='font-italic'>{Student.name + ' ' + Student.surname}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body centered style={{ backgroundColor: '#4bb3bc' }}>
+                    <h4>{decode.school_subject} </h4>
                     <Container>
                         <Row>
-                            <Col className='border 1' xs={6} md={6}>
-                                <InputGroup>
-                                    <InputGroup.Text>Orale</InputGroup.Text>
-                                    <Form.Control as="textarea" aria-label="With textarea" value={orale} onChange={handleOrale} />
-                                </InputGroup>
+                            <Col xs={6} md={6}>
+                                <Form>
+                                    <Form.Control autoFocus placeholder='orale' value={orale} onChange={handleOrale} />
+                                </Form>
                             </Col>
-                            <Col className='border 1' xs={6} md={6}>
-                                <InputGroup>
-                                    <InputGroup.Text>Scritto</InputGroup.Text>
-                                    <Form.Control as="textarea" aria-label="With textarea" value={scritto} onChange={handleScritto} />
-                                </InputGroup>
+                            <Col xs={6} md={6}>
+                                <Form>
+
+                                    <Form.Control autoFocus placeholder='scritto' value={scritto} onChange={handleScritto} />
+                                </Form>
                             </Col>
+
                         </Row>
                     </Container>
-                    <Button variant="secondary" onClick={handlePatch}>
+                    <Button variant="outline-dark" className='mt-3' onClick={handlePatch}>
                         invio
                     </Button>
                 </Modal.Body>
             </Modal>
-            </Container>
         </>
     )
 }

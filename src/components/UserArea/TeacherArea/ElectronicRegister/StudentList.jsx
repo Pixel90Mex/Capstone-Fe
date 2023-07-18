@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Button, Card } from 'react-bootstrap';
 import ElectronicRegister from './ElectronicRegister';
+import "../../../../style/StudentList.css";
+
 const StudentList = ({ singleClass, section, Teacher }) => {
     console.log(Teacher)
     const [renderStudents, setRenderStudents] = useState(false);
@@ -10,7 +12,8 @@ const StudentList = ({ singleClass, section, Teacher }) => {
 
     return (
         <>
-            <Button onClick={toggleStudents}>{section}</Button>
+            
+                <Button id='butStudent' className='mt-0 font-italic' onClick={toggleStudents}>{section}</Button>
                 {
                     singleClass && singleClass.SingleClass?.class?.students?.map((item) => {
                         return (
@@ -18,9 +21,9 @@ const StudentList = ({ singleClass, section, Teacher }) => {
                                 {
                                     renderStudents &&
                                     <>
-                                        <Card>
-                                            <Card.Header>{item.name + ' ' + item.surname}</Card.Header>
-                                            <Card.Body>
+                                        <Card className='mt-1' style={{borderColor:'#b4b4b4'}}>
+                                            <Card.Header className='font-italic' style={{fontSize:'21px', backgroundColor:'#cdcdcd', color:'#3c3c3c', border:'none'}}>{item.name + ' ' + item.surname}</Card.Header>
+                                            <Card.Body style={{backgroundColor:'#ebebef'}}>
                                                 <ElectronicRegister
                                                     dataStudents={item.school_subjects}
                                                     Student={item}
@@ -28,13 +31,14 @@ const StudentList = ({ singleClass, section, Teacher }) => {
                                                 />
                                             </Card.Body>
                                         </Card>
-                                        
+
                                     </>
                                 }
                             </>
                         )
                     })
-                }   
+                }
+            
         </>
     )
 }

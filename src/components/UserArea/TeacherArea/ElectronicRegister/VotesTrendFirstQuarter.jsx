@@ -3,10 +3,10 @@ import { Button, Table } from "react-bootstrap"
 
 const VotesTrendFirstQuarter = ({ Student, decodeSubject }) => {
     const idStudent = Student._id // è id dello studente
-    const quad = "primo_quadrimestre"                                 
+    const quad = "primo_quadrimestre"
     const mat = decodeSubject.school_subject //è la materia del docente
     const [singleSubject, setSingleSubject] = useState(null)
-    
+
     const getSubject = async () => {
         try {
             const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/student/${idStudent}/subject?quad=${quad}&mat=${mat}`);
@@ -18,12 +18,11 @@ const VotesTrendFirstQuarter = ({ Student, decodeSubject }) => {
     }
     useEffect(() => {
         getSubject()
-    },[quad, mat])
+    }, [quad, mat])
     console.log(singleSubject)
     return (
         <>
-            
-            <Table responsive className='mt-5'>
+            <Table striped="columns" bordered hover responsive variant="dark" className='mt-5 ' size="sm" >
                 <thead>
                     <tr>
                         <th>ORALE</th>
@@ -38,9 +37,9 @@ const VotesTrendFirstQuarter = ({ Student, decodeSubject }) => {
                             ))}
                             <ul>Media: {singleSubject && singleSubject.subject.media_orale}</ul>
                         </td>
-                        
+
                         <td>
-                        {singleSubject && singleSubject.subject.scritto.map((item, index) => (
+                            {singleSubject && singleSubject.subject.scritto.map((item, index) => (
                                 <ul key={index}>{item}</ul>
                             ))}
                             <ul>Media: {singleSubject && singleSubject.subject.media_scritto}</ul>

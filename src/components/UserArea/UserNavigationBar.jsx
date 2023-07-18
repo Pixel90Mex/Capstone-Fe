@@ -1,25 +1,27 @@
 import React from 'react';
-import Container from 'react-bootstrap/esm/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import { Nav, Image } from 'react-bootstrap';
+import logo from "../../Images/logo.png"
+import "../../style/navBarUserArea.css";
 
 const NavigationBar = () => {
     return (
-        <Nav fill variant="tabs" defaultActiveKey="/home" fixed="top">
+
+        <Nav id='NavUser' className='align-items-center' fill variant="tabs" fixed="top">
+            <Nav.Link href="/#"> <Image id='logo' src={logo} alt='logo' style={{ width: '140px' }} roundedCircle fluid /></Nav.Link>
             <Nav.Item>
-                <Nav.Link href="/#">Profilo</Nav.Link>
+                <Nav.Link style={{ fontSize: '21px', color: '#3c3c3c' }} href="/#">Profilo</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="link-1">Loooonger NavLink</Nav.Link>
+                <Nav.Link style={{ fontSize: '21px', color: '#3c3c3c' }} eventKey="link-1">Modalità operativa</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="link-2">Link</Nav.Link>
+                <Nav.Link style={{ fontSize: '21px', color: '#3c3c3c' }} eventKey="link-2">Materia</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <Nav.Link eventKey="disabled" disabled>
-                    Disabled
-                </Nav.Link>
+                <Nav.Link style={{ fontSize: '21px', color: '#3c3c3c' }} eventKey="link-2">Circolari</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link style={{ fontSize: '21px', color: '#3c3c3c' }} eventKey="link-2">Posta elettronica</Nav.Link>
             </Nav.Item>
         </Nav>
     );

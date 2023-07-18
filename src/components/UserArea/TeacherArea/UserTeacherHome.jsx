@@ -25,9 +25,9 @@ const UserTeacherHome = () => {
     //console.log(teacher)
     return (
         <>
-            <Container id="MainContent">
+            <Container fluid>
                 <Row>
-                    <Col>
+                    <Col className='p-0'>
                         <ProfileCard
                             Teacher={teacher} />
                     </Col>
