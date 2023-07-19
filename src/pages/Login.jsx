@@ -47,7 +47,7 @@ const Login = () => {
             </div>
             <div className="box">
                 <Form className="m-5" onSubmit={post}>
-                    <h2>Sign in</h2>
+                    <h2>Login</h2>
                     <Form.Control
                         onChange={handleInputChange}
                         name="email"

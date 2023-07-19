@@ -27,8 +27,11 @@ const VotesTrendFirstQuarter = ({ Student, decodeSubject }) => {
     }
     return (
         <>
-            <Button variant="outline-dark" className="me-2 mb-2 w-50 font-italic" onClick={() => handleShow()}>
-                Registro valutazioni 
+            <Button
+                variant="outline-dark"
+                className="me-2 mb-2 w-50"
+                onClick={() => handleShow()}>
+                    Registro valutazioni
             </Button>
             <Modal size="lg" centered show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
                 <Modal.Header style={{ backgroundColor: '#cdcdcd', color: '#3c3c3c', border: 'none' }} closeButton>
@@ -36,7 +39,7 @@ const VotesTrendFirstQuarter = ({ Student, decodeSubject }) => {
                         Registro valutazioni
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body className='p-0' style={{ backgroundColor: '#f8f9fa'}}>
+                <Modal.Body className='p-0' style={{ backgroundColor: '#f8f9fa' }}>
                     <Table className='m-0' striped="columns" bordered hover responsive variant="dark" size="sm" >
                         <thead>
                             <tr>

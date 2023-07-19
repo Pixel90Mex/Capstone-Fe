@@ -1,14 +1,14 @@
-import Card from 'react-bootstrap/Card';
+import {Card, Image } from 'react-bootstrap';
+import { Link } from "react-router-dom"
 import "../../../style/MainCard.css"
 
-const MainCard = ({key, title, img, alt}) => {
+const MainCard = ({key, href, img, alt}) => {
   return (
     <>
-      <Card id='MainCard' className="bg-dark text-white" key={key} style={{ width: '20rem', minHeight: 'fit-content' }}>
-      <Card.Img src={img} alt={alt}/>
-      <Card.ImgOverlay>
-        <Card.Title>{title}</Card.Title>
-      </Card.ImgOverlay>
+      <Card id='MainCard' className="bg-dark text-white border-0" key={key} style={{ width: '18rem'}}>
+      <Link to={href} target="_blank">
+        <Image href="#" src={img} alt={alt} fluid></Image>
+        </Link>
     </Card>
     </>
   );

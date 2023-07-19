@@ -9,10 +9,6 @@ const CarouselHero = () => {
                 return (
                     <CarouselItem  style={{ maxHeight: '550px' }}>
                         <img className={item.className} src={item.src} alt={item.alt} />
-                        <Carousel.Caption>
-                            <h3>{item.captionTitle}</h3>
-                            <p>{item.captionDescription}</p>
-                        </Carousel.Caption>
                     </CarouselItem>
                 )
             })}

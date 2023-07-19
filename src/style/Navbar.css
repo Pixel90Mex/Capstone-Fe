@@ -1,0 +1,9 @@
+/* #nav-dropdown{
+    background-color: #ebebeb !important;
+    padding: 0%;
+} */
+div.dropdown-menu.show {
+    background-color:  #ebebeb; 
+    padding: 0%;
+    margin: 0%;
+  }

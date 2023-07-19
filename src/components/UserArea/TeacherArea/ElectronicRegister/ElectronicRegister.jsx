@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import FirstQuarter from './FirstQuarter'
 import SecondQuarter from './SecondQuarter'

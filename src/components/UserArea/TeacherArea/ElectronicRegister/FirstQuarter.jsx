@@ -1,7 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
-import { Container, Row, Col, Modal, Form, Button, InputGroup, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Modal, Form, Button } from 'react-bootstrap';
 import useDecodedSession from "../../../../hooks/useDecodedSession";
+import { Toast } from "../../../../utilities/notification";
+import { Toaster } from "react-hot-toast";
 
 const FirstQuarter = ({ Student }) => {
     const [fullscreen, setFullscreen] = useState(true);
@@ -9,30 +11,24 @@ const FirstQuarter = ({ Student }) => {
 
     //per prelevare materia
     const decode = useDecodedSession();
-    console.log(decode.school_subject);
 
     //stati per form
     const [orale, setOrale] = useState(null)
     const [scritto, setScritto] = useState(null)
 
-    const handleOrale = (e) => {
-        setOrale(e.target.value);
-    }
-    const handleScritto = (e) => {
-        setScritto(e.target.value);
-    }
+    //toast
+    const successToast = new Toast("Voto registrato!");
+    const errorToast = new Toast("Errore durante l'invio dei dati!");
 
     const handlePatch = async () => {
         var contentBody = null
         if (orale !== null) {
-
             contentBody = {
                 quad: "primo_quadrimestre",
                 mat: decode.school_subject,
                 type: "orale",
                 value: Number(orale)
             }
-
         } else contentBody = {
             quad: "primo_quadrimestre",
             mat: decode.school_subject,
@@ -50,8 +46,10 @@ const FirstQuarter = ({ Student }) => {
             const response = await data.json();
             if (response.statusCode !== 200) {
                 console.log(response)
+                errorToast.success()
             } else {
                 resetFields();
+                successToast.success()
             }
         } catch (error) {
             console.log(error)
@@ -65,8 +63,17 @@ const FirstQuarter = ({ Student }) => {
         setFullscreen();
         setShow(true);
     }
+    const handleOrale = (e) => {
+        setOrale(e.target.value);
+    }
+    const handleScritto = (e) => {
+        setScritto(e.target.value);
+    }
     return (
         <>
+            <div>
+                <Toaster position="top-center" reverseOrder={false} />
+            </div>
             <Button variant="outline-dark" className="me-2 mb-2 w-50" onClick={() => handleShow()}>
                 Inserisci valutazione
             </Button>
@@ -74,7 +81,7 @@ const FirstQuarter = ({ Student }) => {
                 <Modal.Header className='' style={{ backgroundColor: '#cdcdcd', color: '#3c3c3c', border: 'none' }} closeButton>
                     <Modal.Title>{Student.name + ' ' + Student.surname + ' - ' + decode.school_subject}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body style={{ backgroundColor: '#f8f9fa'}}>
+                <Modal.Body style={{ backgroundColor: '#f8f9fa' }}>
                     <Container>
                         <Row>
                             <Col xs={6} md={6}>

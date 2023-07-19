@@ -5,7 +5,7 @@ const PhilosophyTable = ({ filosofia }) => {
   console.log(filosofia.orale)
   return (
     <>
-      <Table striped="columns" bordered hover responsive variant="dark" className='mt-5 ' size="sm">
+      <Table striped="columns" bordered hover responsive variant="dark" className='m-0' size="sm">
         <thead>
           <tr>
             <th>ORALE</th>

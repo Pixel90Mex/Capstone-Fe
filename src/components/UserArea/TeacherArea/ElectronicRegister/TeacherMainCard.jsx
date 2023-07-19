@@ -1,7 +1,5 @@
-import { Card } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import StudentList from './StudentList';
-//import "../../style/MainCard.css"
 
 const TeacherMainCard = ({ idClass, section, Teacher }) => {
   console.log(Teacher)
@@ -11,8 +9,11 @@ const TeacherMainCard = ({ idClass, section, Teacher }) => {
 
   const getClass = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/class/${idClass}?page=${page}&pageSize=${pageSize}`
-      );
+      const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/class/${idClass}?page=${page}&pageSize=${pageSize}`, {
+        headers: {
+          "Content-Type": "application/json"
+        },
+      });
       const data = await response.json();
       setSingleClass(data);
     } catch (error) {

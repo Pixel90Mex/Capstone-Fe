@@ -28,8 +28,11 @@ const VotesTrendSecondQuarter = ({ Student, decodeSubject }) => {
     }
     return (
         <>
-            <Button variant="outline-dark" className="me-2 mb-2 w-50 font-italic" onClick={() => handleShow()}>
-                Registro valutazioni 
+            <Button 
+                variant="outline-dark" 
+                className="me-2 mb-2 w-50" 
+                onClick={() => handleShow()}>
+                    Registro valutazioni 
             </Button>
             <Modal size="lg" centered show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
                 <Modal.Header style={{ backgroundColor: '#cdcdcd', color: '#3c3c3c', border: 'border-none' }} closeButton>

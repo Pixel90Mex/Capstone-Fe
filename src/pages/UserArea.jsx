@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import UserNavigationBar from "../components/UserArea/UserNavigationBar";
+import TeacherNavigationBar from "../components/UserArea/TeacherArea/TeacherNavigationBar";
+import StudentNavigationBar from "../components/UserArea/StudentArea/StudentNavigationBar";
+import Footer from "../components/Home/Footer";
 import useSession from "../hooks/useSession";
 import UserTeacherHome from "../components/UserArea/TeacherArea/UserTeacherHome";
 import UserStudentHome from "../components/UserArea/StudentArea/UserStudentHome";
@@ -23,16 +25,18 @@ const UserArea = () => {
     <>
         {isStudent &&
           <>
-            <UserNavigationBar />
+            <StudentNavigationBar />
             <UserStudentHome />
+            <Footer/>
           </>
         }
 
         {
           !isStudent &&
           <>
-            <UserNavigationBar />
+            <TeacherNavigationBar />
             <UserTeacherHome />
+            <Footer/>
           </>
         }
     </>
