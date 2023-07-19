@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ebebeb !important;
+    position: relative;
+    height: 560px;
+}
+
+h2 {
+    color: #45f3ff;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin-bottom: 40px !important;
+}
+
+#root>div>form>input.form.my-2.form-control,
+#root>div>form>input:nth-child(3) {
+    background: transparent;
+    outline: none;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+}
+
+#root>div>form>button {
+    border: 1px solid #b22222;
+    outline: none;
+    background: transparent;
+    color: #23242a;
+    padding: 11px 25px;
+    width: 100px;
+    margin-top: 40px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#root>div>form>button:hover {
+    background: #b22222;
+    color: #23242a;
+}
+
+#root>div.box>form>button:nth-child(6) {
+    height: 65px;
+    margin-left: 1px;
+    margin-bottom: 10px;
+}
+
+#root>div.box>form>button.btn.btn-primary {
+    margin-left: 88px;
+    margin-bottom: 10px;
+}

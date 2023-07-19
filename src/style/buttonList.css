@@ -1,0 +1,17 @@
+#butStudent {
+    border: 1px solid #b22222;
+    outline: none;
+    background: transparent;
+    color: #23242a;
+    padding: 11px;
+    width: 100px;
+    margin-top: 40px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#butStudent:hover {
+    background: #b22222;
+    color: white;
+}

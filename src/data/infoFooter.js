@@ -1,29 +1,36 @@
 export const dataOne = [
     {
         title: 'CONTATTI',
-        href: '/sezioneUno'
+        href: '/sezioneUno',
+        id: 1
     },
     {
         title: 'Tel: +3902405007',
-        href: '/sezioneTre'
+        href: '/sezioneTre',
+        id: 2
     },
     {
         title: 'Email: mips070007@istruzione.it',
-        href: '/sezioneDue'
+        href: '/sezioneDue',
+        id: 3
     },
     {
         title: 'PEC: mips070007@pec.istruzione.it',
-        href: '/sezioneTre'
+        href: '/sezioneTre',
+        id: 4
     }
 ];
 export const dataTwo = [
     {
-        title: 'Via A. De Vincenti, 7 '
+        title: 'Via A. De Vincenti, 7 ',
+        id: 1
     },
     {
-        title: '- 20148 -'
+        title: '- 20148 -',
+        id: 2
     },
     {
-        title: 'Milano'
+        title: 'Milano',
+        id: 3
     }
 ];

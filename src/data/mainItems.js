@@ -1,54 +1,63 @@
 export const mainItems = [
     {
-        src: 'https://scorcidimondo.it/wp-content/uploads/2017/07/DSC_0225-min.jpg',
+        src: "https://www.liceovirgiliomilano.edu.it/wp-content/uploads/2022/01/miur-virgilio.jpg",
+        href: "https://www.miur.gov.it/",
         alt: 'First Card',
-        title: 'First title',
+        title: 'Libri di testo 2023-2024',
         id: 1
     },
     {
-        src: 'https://a.cdn-hotels.com/gdcs/production178/d1699/8f999c57-cf7b-47cf-9252-8e3513ef570d.jpg',
+        src: 'https://www.liceovirgiliomilano.edu.it/wp-content/uploads/2022/01/amministrazione-trasparente-virgilio.jpg',
+        href: "https://www.trasparenzascuole.it/Public/AmministrazioneTrasparenteV2.aspx?Customer_ID=adbe95fc-5d12-4b4b-a3b3-21ec6101f267",
         alt: 'Second Card',
         title: 'Second title',
         id: 2
     },
     {
-        src: 'https://static2-viaggi.corriereobjects.it/wp-content/uploads/2015/06/sanpietroburgo.jpg?v=1573482389',
+        src: 'https://www.liceovirgiliomilano.edu.it/wp-content/uploads/2022/01/albo-pretorio-online-virgilio.jpg',
+        href: "https://www.trasparenzascuole.it/Public/APDPublic_ExtV2.aspx?CF=80107250153",
         alt: 'Third Card',
         title: 'Third title',
         id: 3
     },
     {
-        src: 'https://www.aviontourism.com/images/1200-628-Crop/29f480ee-7785-433e-8c05-1abd670b496e',
+        src: 'https://www.liceovirgiliomilano.edu.it/wp-content/uploads/2022/01/noi-PA-virgilio.jpg',
+        href:"https://noipa.mef.gov.it/cl/",
         alt: 'Fourth Card',
         title: 'Fouth title',
         id: 4
     },
     {
-        src: 'https://www.cisonostato.it/photos/38/3805/full/copertina.jpg',
+        src: 'https://www.liceovirgiliomilano.edu.it/wp-content/uploads/2022/01/invalsi-virgilio.jpg',
+        href: "https://www.invalsi.it/invalsi/index.php",
         alt: 'Fifth Card',
         title: 'Fifth title',
         id: 5
     },
     {
-        src: 'https://cdn.britannica.com/71/73371-050-9DFAEC1E/Reykjavik-Iceland.jpg',
+        src: 'https://www.liceovirgiliomilano.edu.it/wp-content/uploads/2022/01/ufficio-scolastico-lombradia-virgilio.jpg',
+        href: "https://milano.istruzione.lombardia.gov.it/",
         alt: 'Sixth Card',
         title: 'Sixth title',
         id: 6
     },
     {
-        src: 'https://cdn.britannica.com/71/73371-050-9DFAEC1E/Reykjavik-Iceland.jpg',
+        src: 'https://www.liceovirgiliomilano.edu.it/wp-content/uploads/2022/02/scuola-digitale.jpg',
+        href: "https://scuoladigitale.axioscloud.it/Pages/SD/SD_Login.aspx",
         alt: 'Sixth Card',
         title: 'Sixth title',
         id: 7
     },
     {
-        src: 'https://cdn.britannica.com/71/73371-050-9DFAEC1E/Reykjavik-Iceland.jpg',
+        src: 'https://www.liceovirgiliomilano.edu.it/wp-content/uploads/2022/01/bacheca-virgilio.jpg',
+        href: "https://www.liceovirgiliomilano.edu.it/bacheca-sindacale/",
         alt: 'Sixth Card',
         title: 'Sixth title',
         id: 8
     },
     {
-        src: 'https://cdn.britannica.com/71/73371-050-9DFAEC1E/Reykjavik-Iceland.jpg',
+        src: 'https://www.liceovirgiliomilano.edu.it/wp-content/uploads/2022/03/SCUOLA-in-chiaro-virgilio.jpg',
+        href: "https://cercalatuascuola.istruzione.it/cercalatuascuola/istituti/MIPM050003/liceo-statale-virgilio/",
         alt: 'Sixth Card',
         title: 'Sixth title',
         id: 9

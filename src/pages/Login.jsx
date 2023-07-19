@@ -1,15 +1,15 @@
 import React from "react";
 import {Button, Form} from "react-bootstrap";
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch} from "react-redux";
 import { LoginRequest } from "../reducers/loginSlice";
 import { Toast } from "../utilities/notification";
 import { Toaster } from "react-hot-toast";
 import jwtDecode from "jwt-decode";
+import "../style/Login.css";
 
 const Login = () => {
-
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -26,7 +26,6 @@ const Login = () => {
                 successToast.success();
                 localStorage.setItem("session", JSON.stringify(action.payload.token));
                 const decodeToken = jwtDecode(action.payload.token);
-                console.log(decodeToken);
                 setTimeout(() => {
                     navigate(`/UserArea/${decodeToken.id}`, { replace: true });
                 }, 1500);
@@ -46,7 +45,7 @@ const Login = () => {
             </div>
             <div className="box">
                 <Form className="m-5" onSubmit={post}>
-                    <h2>Sign in</h2>
+                    <h2>Login</h2>
                     <Form.Control
                         onChange={handleInputChange}
                         name="email"
@@ -61,10 +60,6 @@ const Login = () => {
                         placeholder="Inserisci password..."
                         className="my-2"
                     />
-                    <div className="links">
-                        <a href="#">Forgot Password</a>
-                        <a href="#">Signup</a>
-                    </div>
                     <Button type="submit">Login</Button>
                 </Form>
             </div>

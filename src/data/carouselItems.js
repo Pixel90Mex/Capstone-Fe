@@ -1,37 +1,33 @@
 export const carouselItems = [
     {
         className: 'd-block w-100',
-        src: 'https://scorcidimondo.it/wp-content/uploads/2017/07/DSC_0225-min.jpg',
+        src: 'https://citynews-agrigentonotizie.stgy.ovh/~media/horizontal-hi/50225358537637/liceo-classico.jpg',
         alt: 'First slide',
-        captionTitle: 'First slide title',
-        captionDescription: 'Lorem...',
+        captionTitle: 'Didattica',
         id: 1
     },
 
     {
         className: 'd-block w-100',
-        src: 'https://a.cdn-hotels.com/gdcs/production178/d1699/8f999c57-cf7b-47cf-9252-8e3513ef570d.jpg',
+        src: 'https://liceicastelvetrano.edu.it/wp-content/uploads/sites/77/IMG_0073.jpg',
         alt: 'Second slide',
-        captionTitle: 'Second slide title',
-        captionDescription: 'Lorem...',
+        captionTitle: 'La nostra storia',
         id: 2
     },
 
     {
         className: 'd-block w-100',
-        src: 'https://www.cisonostato.it/photos/38/3805/full/copertina.jpg',
+        src: 'https://media.gettyimages.com/id/2669623/it/foto/italian-poet-salvatore-quasimodo.jpg?s=612x612&w=gi&k=20&c=pOf7THonlM6-7f2sAu5G3sSLOmo5W_C_GhsM8DKT914=',
         alt: 'Third slide',
-        captionTitle: 'Third slide title',
-        captionDescription: 'Lorem...',
+        captionTitle: 'Iniziative',
         id: 3
     },
 
     {
         className: 'd-block w-100',
-        src: 'https://www.aviontourism.com/images/1200-628-Crop/29f480ee-7785-433e-8c05-1abd670b496e',
+        src: 'https://i0.wp.com/centrostudidannunzio.com/wp-content/uploads/2021/05/annie-spratt-dwyu3i-mqeo-unsplash.jpg?resize=1120%2C747&ssl=1',
         alt: 'fourth slide',
-        captionTitle: 'Fourth slide title',
-        captionDescription: 'Lorem...',
+        captionTitle: 'Servizi',
         id: 4
     }
 ]
