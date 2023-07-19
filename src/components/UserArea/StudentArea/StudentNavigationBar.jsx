@@ -22,19 +22,19 @@ const StudentNavigationBar = () => {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav.Item>
-                                <Nav.Link className='ps-5 fs-3' href="/#">Profilo</Nav.Link>
+                                <Nav.Link className='ps-5 ms-5 fs-3' href="/#">Profilo</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link className='ps-5 fs-3' eventKey="link-1">Iniziative</Nav.Link>
+                                <Nav.Link className='ps-5 ms-5 fs-3' eventKey="link-1">Iniziative</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link className='ps-5 fs-3' eventKey="link-2">Docenti</Nav.Link>
+                                <Nav.Link className='ps-5 ms-5 fs-3' eventKey="link-2">Docenti</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link className='ps-5 fs-3' eventKey="link-2">Circolari</Nav.Link>
+                                <Nav.Link className='ps-5 ms-5 fs-3' eventKey="link-2">Circolari</Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link className='ps-5 fs-3' eventKey="link-2">Posta</Nav.Link>
+                                <Nav.Link className='ps-5 ms-5 fs-3' eventKey="link-2">Posta</Nav.Link>
                             </Nav.Item>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>

@@ -1,10 +1,9 @@
 import React from 'react'
-import { Card, Container, Row, Col, Image } from 'react-bootstrap'
+import { Card, Row, Col, Image } from 'react-bootstrap'
 import StudentFirstQuarter from "./VotesFirstQuarter/FirstQuarter/StudentFirstQuarter";
 import StudentSecondQuarter from "./VotesSecondQuarter/SecondQuarter/StudentSecondQuarter";
 
 const StudentProfileCard = ({ Student }) => {
-    //console.log(Student)
     return (
         <>
             <Card style={{border: 'none ', backgroundColor:'#ebebeb', minHeight:'100vh'}}>

@@ -3,7 +3,6 @@ import { Card, Image } from 'react-bootstrap'
 import TeacherMainCard from './TeacherMainCard'
 
 const ProfileCard = ({ Teacher }) => {
-    console.log(Teacher)
     return (
         <>
             <Card style={{border: 'none ', backgroundColor:'#ebebeb ', minHeight: '100vh'}}>

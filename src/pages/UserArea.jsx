@@ -5,11 +5,8 @@ import Footer from "../components/Home/Footer";
 import useSession from "../hooks/useSession";
 import UserTeacherHome from "../components/UserArea/TeacherArea/UserTeacherHome";
 import UserStudentHome from "../components/UserArea/StudentArea/UserStudentHome";
-import { useParams } from "react-router-dom";
 
 const UserArea = () => {
-  const { id } = useParams();
-  console.log(id);
   const session = useSession();
   const [isStudent, setIsStudent] = useState(false);
 

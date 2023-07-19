@@ -40,13 +40,12 @@ const FirstQuarter = ({ Student }) => {
                 method: 'PATCH',
                 body: JSON.stringify(contentBody),
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 }
             });
             const response = await data.json();
             if (response.statusCode !== 200) {
-                console.log(response)
-                errorToast.success()
+                errorToast.error()
             } else {
                 resetFields();
                 successToast.success()

@@ -11,7 +11,7 @@ const Footer = () => {
                         {
                             dataOne.map((item) => {
                                 return (
-                                    <ListGroup.Item className="border border-0">{item.title}</ListGroup.Item>
+                                    <ListGroup.Item key={item.id} className="border border-0">{item.title}</ListGroup.Item>
                                 )
                             })
                         }
@@ -22,7 +22,7 @@ const Footer = () => {
                         {
                             dataTwo.map((item) => {
                                 return (
-                                    <ListGroup.Item className="border border-0">{item.title}</ListGroup.Item>
+                                    <ListGroup.Item key={item.id} className="border border-0">{item.title}</ListGroup.Item>
                                 )
                             })
                         }

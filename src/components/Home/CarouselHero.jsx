@@ -7,7 +7,7 @@ const CarouselHero = () => {
         <Carousel fade>
             {carouselItems.map((item) => {
                 return (
-                    <CarouselItem  style={{ maxHeight: '550px' }}>
+                    <CarouselItem key={item.id} style={{ maxHeight: '550px' }}>
                         <img className={item.className} src={item.src} alt={item.alt} />
                     </CarouselItem>
                 )

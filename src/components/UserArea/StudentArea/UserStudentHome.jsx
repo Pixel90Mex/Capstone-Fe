@@ -2,21 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import StudentProfileCard from "./StudentProfileCard";
 import useDecodedSession from '../../../hooks/useDecodedSession';
-import useSession from "../../../hooks/useSession";
 
 const UserStudentHome = () => {
+    const [page, setPage] = useState(1);
+    const [pageSize, setPageSize] = useState(1);
     const [student, setStudent] = useState(null);
     const decode = useDecodedSession();
-    const session = useSession();
 
     const getStudent = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/student/${decode.id}`, {
-                headers: {
-                    auth: session,
-                    "Content-type": "application/json",
-                }
-            });
+            const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/student/${decode.id}?page=${page}&pageSize=${pageSize}`);
             const data = await response.json();
             setStudent(data);
 
@@ -26,8 +21,7 @@ const UserStudentHome = () => {
     };
     useEffect(() => {
         getStudent();
-    });
-    console.log("student", student);
+    },[page, pageSize]);
     return (
         <>
             <Container fluid>

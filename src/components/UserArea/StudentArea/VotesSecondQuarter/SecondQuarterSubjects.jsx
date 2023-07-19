@@ -10,7 +10,6 @@ import PhysicalTable from './SecondQuarter/TablesSecondQuarter/PhysicalTable';
 import PhysEd from './SecondQuarter/TablesSecondQuarter/PhysEd';
 
 const SecondQuarterSubjects = (school_subjects) => {
-    console.log(school_subjects.school_subjects.storia);
 
     const [showTabStoria, setShowTabStoria] = useState(false);
     const [showTabFilosofia, setShowTabFilosofia] = useState(false);

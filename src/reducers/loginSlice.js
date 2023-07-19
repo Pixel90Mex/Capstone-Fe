@@ -16,7 +16,6 @@ export const LoginRequest = createAsyncThunk(
                 },
                 body: JSON.stringify(data)
             })
-            console.log(response)
             return await response.json();
         } catch (error) {
             if (error) 

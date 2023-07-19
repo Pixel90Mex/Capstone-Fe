@@ -4,7 +4,6 @@ import FirstQuarterSubjects from '../FirstQuarterSubjects';
 import "../../../../../style/buttonList.css"
 
 const StudentFirstQuarter = ({ school_subjects }) => {
-    //console.log(school_subjects)
     const [renderTable, setRenderTable] = useState(false);
     const [handleOne, setHandleOne] = useState(false);
 

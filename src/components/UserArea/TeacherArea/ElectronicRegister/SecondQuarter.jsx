@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import { Container, Row, Col, Modal, Form, Button, InputGroup } from 'react-bootstrap';
 import useDecodedSession from "../../../../hooks/useDecodedSession";
+import { Toast } from "../../../../utilities/notification";
+import { Toaster } from "react-hot-toast";
 
 const SecondQuarter = ({ Student }) => {
     const [fullscreen, setFullscreen] = useState(true);
@@ -14,6 +16,10 @@ const SecondQuarter = ({ Student }) => {
     //stati per form
     const [orale, setOrale] = useState(null)
     const [scritto, setScritto] = useState(null)
+
+    //toast
+    const successToastTwo = new Toast("Voto registrato!");
+    const errorToastTwo = new Toast("Errore durante l'invio dei dati!");
 
     const handleOrale = (e) => {
         setOrale(e.target.value);
@@ -43,13 +49,17 @@ const SecondQuarter = ({ Student }) => {
         try {
             const data = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/student/patchVote/${Student._id}`, {
                 method: 'PATCH',
-                body: JSON.stringify(contentBody)
+                body: JSON.stringify(contentBody),
+                headers: {
+                    "Content-Type": "application/json",
+                }
             });
             const response = await data.json();
             if (response.statusCode !== 200) {
-                console.log(response)
+                errorToastTwo.error()
             } else {
                 resetFields();
+                successToastTwo.success()
             }
         } catch (error) {
             console.log(error)

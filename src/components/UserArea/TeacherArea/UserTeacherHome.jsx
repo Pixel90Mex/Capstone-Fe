@@ -2,22 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import ProfileCard from '../../UserArea/TeacherArea/ElectronicRegister/ProfileCard'
 import useDecodedSession from '../../../hooks/useDecodedSession';
-import useSession from '../../../hooks/useSession';
 
 const UserTeacherHome = () => {
     const [page, setPage] = useState(1);
     const [pageSize, setPageSize] = useState(3);
     const [teacher, setTeacher] = useState(null);
     const decode = useDecodedSession();
-    const session = useSession();
 
-    const getClasses = async (id) => {
+    const getClasses = async () => {
+        if(decode.role === "teacher")
         try {
             const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/teacher/${decode.id}?page=${page}&pageSize=${pageSize}`, {
-                headers: {
-                    "Content-Type": "application/json",
-                    auth: session
-                  },
+                headers:{
+                    "Content-Type": "application-json",
+                }
             });
             const data = await response.json();
             setTeacher(data);
@@ -29,7 +27,6 @@ const UserTeacherHome = () => {
     useEffect(() => {
         getClasses()
     }, [page, pageSize]);
-    //console.log(teacher)
     return (
         <>
             <Container fluid>

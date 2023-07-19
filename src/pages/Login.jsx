@@ -1,7 +1,7 @@
 import React from "react";
 import {Button, Form} from "react-bootstrap";
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch} from "react-redux";
 import { LoginRequest } from "../reducers/loginSlice";
 import { Toast } from "../utilities/notification";
@@ -10,7 +10,6 @@ import jwtDecode from "jwt-decode";
 import "../style/Login.css";
 
 const Login = () => {
-
     const [formData, setFormData] = useState({
         email: "",
         password: "",
@@ -27,7 +26,6 @@ const Login = () => {
                 successToast.success();
                 localStorage.setItem("session", JSON.stringify(action.payload.token));
                 const decodeToken = jwtDecode(action.payload.token);
-                console.log(decodeToken);
                 setTimeout(() => {
                     navigate(`/UserArea/${decodeToken.id}`, { replace: true });
                 }, 1500);

@@ -4,7 +4,6 @@ import ElectronicRegister from './ElectronicRegister';
 import "../../../../style/buttonList.css";
 
 const StudentList = ({ singleClass, section, Teacher }) => {
-    console.log(Teacher)
     const [renderStudents, setRenderStudents] = useState(false);
     const toggleStudents = () => {
         setRenderStudents(!renderStudents)
